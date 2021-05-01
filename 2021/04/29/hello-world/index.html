@@ -23,14 +23,31 @@
 <link rel="stylesheet" href="/css/style.css">
 
   <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-  
+  {% if theme.busuanzi_count.total_visitors %}
+-   <span class="site-uv" title="{{ __('footer.total_visitors') }}">
++   <span class="site-uv">
++     {{ __('footer.total_visitors', '<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>') }}
+-     <i class="fa fa-{{ theme.busuanzi_count.total_visitors_icon }}"></i>
+-     <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  {% endif %}
+
+  {% if theme.busuanzi_count.total_views %}
+-   <span class="site-pv" title="{{ __('footer.total_views') }}">
++   <span class="site-pv">
++     {{ __('footer.total_views', '<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>') }}
+-     <i class="fa fa-{{ theme.busuanzi_count.total_views_icon }}"></i>
+-     <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  {% endif %}
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">一切尽意，万事尽欢</a></h1>
+  <h1><a href="/">CmJ's blog</s></a></h1>
+    <a href="/">学习，永无止境！</s></a>
   <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -133,17 +150,17 @@
 
 </div></div>
     <aside id="sidebar" class="alignright">
-  <div class="search">
+  <!-- <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="as_sitesearch" value="example.com">
   </form>
-</div>
+</div> -->
 
 
   
 <div class="widget tag">
-  <h3 class="title">分类</h3>
+  <h3 class="title">文章分类</h3>
   <ul class="entry">
   
     <li><a href="/categories/Diary/">Diary</a><small>1</small></li>
@@ -167,13 +184,23 @@
 </aside>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+  <footer id="footer" class="inner"><script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<div class="alignleft">
+  
   
   &copy; 2021 John Doe
   
 </div>
-<div class="clearfix"></div></footer>
-  
+<div class="clearfix"></div>
+</footer>
+  <script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
 <script src="/js/jquery-3.4.1.min.js"></script>
 
 
@@ -181,7 +208,6 @@
 
 
 <script src="/js/gallery.js"></script>
-
 
 
 
@@ -197,6 +223,7 @@
   $('.fancybox').fancybox();
 })(jQuery);
 </script>
+
 
 </body>
 </html>
